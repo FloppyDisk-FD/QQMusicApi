@@ -13,7 +13,7 @@ var config = require('./config');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || config.port);
+var port = normalizePort(process.env.PORT || 3000);
 global.QQ = process.env.QQ || config.qq;
 global.PORT = port;
 global.useDataStatistics = config.useDataStatistics;
@@ -90,7 +90,4 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  console.log(`Listening on \n http://localhost:${addr.port} \n http://127.0.0.1:${addr.port}`);
-  console.log(`配置QQ号/wxuin 为：${global.QQ}`);
 }
